@@ -1,0 +1,121 @@
+body {
+    background-color: blue;
+    padding: 0;
+    margin: 0;
+}
+
+.back {
+    height: 160px;
+    width: 200px;
+    background-color: white;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+}
+
+.front {
+    width: 200px;
+    height: 90px;
+    background: red;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    
+    position: absolute;
+    top: 70px;
+    left: 0; 
+    border: 2px solid ;
+}
+
+.right {
+    height: 160px;
+    width: 200px;
+    background-color: aqua;
+    clip-path: polygon(0 0, 50% 50%, 0 100%);
+
+    
+}
+
+
+.left {
+    height: 160px;
+    width: 200px;
+    background-color: aqua;
+    clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.triangle {
+    width: 200px;
+    height: 200px;
+    background: green;
+    clip-path: polygon(50% 50%, 100% 50%, 50% 100%, 0 50%);
+    position: absolute;
+    top: -100px;
+    left: 0;
+    transition: all 0.5s;
+
+    /*https://usefulangle.com/post/333/css-triangle*/
+   
+}
+
+.triangle:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateX(180deg);
+    transform-origin: top; 
+   transition: all 0.5s;
+}
+
+.triangle:hover {
+    transform: rotateX(180deg);
+    
+ }   
+
+
+.heart {
+    background-color: red;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transform: rotate(45deg);
+}  
+
+.heart::before, .heart::after {
+    content: "";
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    
+}
+
+.heart::before {
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    right: 25px;
+}
+.heartcontainer:hover {
+    transform: translateX(-20px);
+    transform: translateY(-20px);
+    transition-delay: 0.2s;
+    z-index: 5;
+}
+
+/* https://css-tricks.com/hearts-in-html-and-css/ */
